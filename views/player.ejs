@@ -1,0 +1,64 @@
+<div id="playerBox" class="
+        player 
+        w-full
+        h-20
+        absolute 
+        bottom-0 
+        bg-zinc-800
+        flex
+        items-center
+        justify-center
+        z-20
+        ">
+
+    <div class=" 
+        w-1/4
+        h-full
+        flex
+        items-center
+        justify-center
+        ">
+
+        <div class="imgWapper w-[25%] flex items-center justify-center">
+            <div class="
+        w-[55px]
+        h-[55px]
+        rounded-lg
+        bg-zinc-700
+        overflow-hidden
+        object-cover
+        ">
+            <img id="CoverImage" class="w-full h-full"  src="" alt="">
+    </div>
+        </div>
+        <div class="
+        textWraper
+        h-full
+        imgWapper w-[75%] flex items-center justify-center
+        flex-col
+        ">
+        <h1 id="musicTitle"  class="text-zinc-300 font-semibold w-full">Song name</h1>
+        <p  id="artistName" class="text-zinc-300 text-xs w-full">Artist name</p>
+    </div>
+    </div>
+    <div class=" w-[45%] h-full flex-col flex items-center justify-center">
+        <div class="rageBox w-full py-2 flex items-center justify-center">
+            <input id="musicRange"  type="range" min="0" max="100" class="w-full bg-zinc-700 range-xs range range-success" />
+        </div>
+        <div class="rageText w-full text-xs flex items-center justify-between text-zinc-200">
+            <h1 id="musicDuration">00:00</h1>
+            <h1>05:45</h1>
+        </div>
+    </div>
+    <div class=" w-[35%] h-full flex items-center justify-center ">
+        <div class="Icons w-full py-2 flex items-center gap-3 justify-center text-zinc-200">
+            <span id="volumeBtn" class="cursor-pointer transition-all hover:bg-zinc-600 text-md w-11 rounded-3xl py-1 bg-zinc-700 flex items-center justify-center"><i class="ri-volume-up-fill"></i></span>
+            <span class="cursor-pointer transition-all hover:bg-zinc-600 text-md w-11 rounded-3xl py-1 bg-zinc-700 flex items-center justify-center"><i class="ri-repeat-line"></i></span>
+            <span class="cursor-pointer transition-all text-3xl"><i class="ri-skip-back-fill"></i></span>
+            <span class="cursor-pointer transition-all text-[54px]"><i id="playIcon" class="ri-play-circle-fill"></i></span>
+            <span class="cursor-pointer transition-all text-3xl"><i class="ri-skip-forward-fill"></i></span>
+
+        </div>
+    </div>
+
+</div>

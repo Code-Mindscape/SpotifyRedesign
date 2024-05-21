@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: 'poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.range-success {
+    --range-shdw: oklch(0.77 0.21 148.66);
+}
+.SongsBox::-webkit-scrollbar{
+    width: 0;
+    appearance: none;
+}
+.songBox:hover .playOverlay{
+    visibility: visible;
+}
+.songBox .playOverlay .playIcon{
+    transform: translateY(70px);
+}
+.songBox:hover .playOverlay .playIcon{
+    transition: 0.2s;
+    transform: translateY(0px);
+}
+#playerBox{
+    display: none;
+}
+.scrollBox::-webkit-scrollbar{
+    width: 0px;
+}
+.songBox{
+    border-bottom: 1px solid rgba(222, 222, 222, 0.17);
+}
+.songBox{
+    border-bottom: 1px solid rgba(222, 222, 222, 0.17);
+}

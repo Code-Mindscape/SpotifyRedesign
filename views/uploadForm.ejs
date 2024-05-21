@@ -1,0 +1,36 @@
+<dialog id="my_modal_4" class="modal">
+  <div class="modal-box w-11/12 max-w-3xl relative py-5 pb-8 px-6 bg-zinc-700">
+    <div class="logo w-full py-1 flex items-center justify-start">
+      <i class="ri-spotify-fill text-[#1ED760] text-4xl"></i>
+      <h3 class="text-lg text-zinc-200 font-semibold tracking-tighter">Add new song</h3>
+    </div>
+    <div class="mainContent w-full h-full flex items-center justify-center gap-2">
+      <div class="inputs py-6 pb-0 w-full h-full flex flex-col gap-3">
+        <form method="post" action="/upload" enctype="multipart/form-data" class="w-full h-full flex items-center justify-center gap-3">
+          <div class="inputs w-1/2 h-full flex flex-col items-start gap-3 justify-start">
+            <input name="title" type="text" placeholder="Add Title" class="input border text-sm text-white focus:border-zinc-400 h-10 border-zinc-500 bg-transparent w-full" />
+            <input name="artist" type="text" placeholder="Add Artist" value="<%= user.username %>" class="input border text-sm text-white focus:border-zinc-400 h-10 border-zinc-500 bg-transparent w-full" />
+            <select name="category" class="select border text-sm text-white focus:border-zinc-400 h-10 border-zinc-500 bg-transparent w-full">
+              <option disabled selected>Category</option>
+              <option class="bg-zinc-700">Country</option>
+              <option class="bg-zinc-700">Folk</option>
+              <option class="bg-zinc-700">Pop</option>
+              <option class="bg-zinc-700">Hip Hop</option>
+              <option class="bg-zinc-700">Classical</option>
+            </select>
+            <input name="audioFile" accept="audio/*" type="file" class="file-input border text-sm text-white focus:border-zinc-400 h-10 border-zinc-500 bg-transparent w-full" />
+            <input type="submit" class="btn bg-[#1ED760] hover:bg-[#1ed75fdf] border-none text-zinc-100 btn-md py-1" value="Upload" />
+          </div>
+          <div class="coverIMG w-1/2 h-full flex items-center justify-center">
+            <div id="cover" class="ImageWapper w-[270px] h-[270px] border flex items-center justify-center bg-zinc-500/50 border-zinc-500 rounded-md">
+              <input hidden type="file" name="imageFile" accept="image/*">
+            </div>
+          </div>
+        </form>
+        <form method="dialog">
+          <button class="btn absolute top-4 right-4 btn-xs rounded-full">X</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</dialog>

@@ -1,0 +1,15 @@
+<div class="nav w-full z-[2] shadow-md px-5 py-3 top-0 absolute  bg-zinc-800 flex items-center gap-5 justify-end">
+    <div class="search w-[20%] h-full flex items-center justify-center">
+        <form action="">
+            <label class="input outline-none border-none bg-zinc-900/50 flex items-center gap-2">
+                <input type="search" name="search" placeholder="Type here" class="input outline-none border-none bg-transparent text-white input-xs w-full max-w-sm" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#ffff" class="w-4 h-4 opacity-70"><path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" /></svg>
+              </label>
+        </form>
+    </div>
+    <% if(loginFlag){ %>
+        <a href="/auth/login"
+            class="px-4 py-2 rounded-full text-xs font-semibold hover:bg-zinc-100 transition-all bg-white">Login</a>
+        <%}%>
+            <div class="imageBox w-10 h-10 rounded-full bg-zinc-200"></div>
+</div>

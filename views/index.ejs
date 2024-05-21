@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="icon" type="image/svg" href="/images/spotify-logo.svg">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <title>Spotify</title>
+  <style>
+    @keyframes fadeFromTop {
+      0% {
+        /* opacity: 0; */
+        transform: translateY(-10px);
+      }
+
+      100% {
+        /* opacity: 1; */
+        transform: translateY(0px);
+      }
+    }
+
+    .alert {
+      animation: fadeFromTop cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s forwards;
+      /* Play the animation once and keep the final state */
+    }
+  </style>
+</head>
+
+<body onload="openPreLoader()" class="relative">
+
+  <!-- <div id="loader"
+    class="transition-all absolute top-0 z-30 w-full h-screen bg-[#040e07] flex items-center justify-center">
+    <div class="logoBox flex px-5 py-5 items-center justify-end flex-col">
+      <div class="text flex items-center justify-end">
+        <i class="ri-spotify-fill text-[#1ED760] text-8xl"></i>
+        <h1 class="text-5xl text-white">Spotify</h1>
+      </div>
+      <div class="py-2 flex items-center justify-end">
+        <span class="loading text-[#1ed75f7b] loading-dots loading-lg"></span>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="musicBox relative overflow-hidden w-full h-screen bg-zinc-800">
+
+    <%- include('../partials/navbar.ejs') %>
+      <%- include('../partials/sidebar.ejs') %>
+        <%- include('./uploadForm.ejs') %>
+
+          <div
+            class="SongsBox pt-20 pl-20 w-full h-full overflow-y-auto  px-5 py-5 flex items-start flex-wrap justify-start gap-5 bg-[#353535eb]">
+            <% songs.forEach((song)=>{ %>
+              <div id="songBoxContainer" data-song="/uploads/audios/<%= song.songUrl %>"
+                class="songBox pointer-events-none w-[170px] h-[220px]  bg-zinc-800/70 rounded-md">
+                <div class="imgWrap h-[75%] w-full flex justify-center items-center">
+                  <div class="imageBox relative overflow-hidden object-cover w-[140px] h-[130px] rounded-md">
+                    <span
+                      class="playOverlay pointer-events-auto flex invisible items-end justify-end pr-5 text-[#1ED760] bg-zinc-800/50 w-full h-full absolute">
+                      <a href="/addfav/<%= song._id %> " class="absolute top-0 right-1">
+                        <% if(song.likes.indexOf(user._id) !== -1){ %>
+                          <i id="songFavBtn" class="pointer-events-auto cursor-pointer ri-heart-3-fill text-[#1ED760] text-[25px]"></i>
+                          <% } else{ %>
+                            <i id="songFavBtn" class="pointer-events-auto cursor-pointer ri-heart-3-line text-[25px]"></i>
+                          <%}%>
+                      
+                      </a>
+                      <i id="songPlayerBtn"
+                        class="pointer-events-auto playIcon cursor-pointer ri-play-circle-fill text-[55px]"></i>
+                    </span>
+                    <img id="songCoverImage" src="/uploads/images/<%= song.songCoverUrl%>"
+                      class="pointer-events-auto w-full h-full" alt="">
+                  </div>
+                </div>
+                <div class="TitleWrap h-[25%] w-full flex justify-center items-center">
+                  <div class="w-full h-full px-3 py3">
+                    <h1 id="songTitle" class="font-bold tracking-tight text-lg text-zinc-200">
+                      <%= song.songTitle %>
+                    </h1>
+                    <p id="songArtist" class="tracking-tight text-xs text-zinc-200/50">
+                      <%= song.songArtist %>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+          </div>
+
+          <% if (messages.success || messages.delete) { %>
+            <div class="alert w-[25%] z-20 border-none right-3 top-16 rounded-md bg-green-400 absolute my-4 mx-4">
+              <i class="ri-checkbox-circle-fill text-xl"></i>
+              <span class="text-md">
+                <%= messages.success %>
+              </span>
+            </div>
+            <% } %>
+              <%- include('./player.ejs') %>
+
+  </div>
+
+
+
+
+
+
+
+  <script>
+    setTimeout(() => {
+      const alertMessage = document.querySelector('.alert');
+      if (alertMessage) {
+
+        alertMessage.style.transform.translatey = '-10px';
+        alertMessage.style.display = 'none';
+      }
+    }, 2000);
+    // let loader = document.getElementById('loader')
+    // let cover = document.querySelector('#cover')
+    // function openPreLoader() {
+    //   setTimeout(() => {
+    //     loader.style.opacity = 0
+    //     setTimeout(() => {
+    //       loader.style.display = "none"
+    //     }, 200);
+    //   }, 1500);
+    // }
+    cover.addEventListener('click', () => {
+      document.querySelector('#cover input').click()
+    })
+  </script>
+
+  <script src="/javascripts/sidebarTabs.js"></script>
+  <script src="/javascripts/songPlayer.js"></script>
+  <script src="/javascripts/PlayerBar.js"></script>
+</body>
+
+</html>

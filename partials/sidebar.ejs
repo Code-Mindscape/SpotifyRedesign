@@ -1,0 +1,38 @@
+<div class="sidebar w-[70px] absolute left-0 top-0 h-screen z-[2] bg-zinc-900">
+    <div class="logo h-[12%] w-full flex items-center justify-center">
+        <i class="ri-spotify-fill text-[#1ED760] text-5xl"></i>
+    </div>
+    <div class="tabs h-[88%] pt-7 w-full flex-col flex items-center gap-3 justify-start">
+        <div class="tooltip hover:tooltip-open tooltip-right" data-tip="Home">
+        <a href="/home">
+            <div 
+            id="home" class="tab cursor-pointer w-[50px] rounded-md h-[50px] bg-zinc-800  flex items-center justify-center">
+            <i id="icon" class="ri-home-3-line stroke-none text-[#ffffff85] text-[18px]"></i>
+        </div>
+        </a>
+    </div>
+        <div class="tooltip hover:tooltip-open tooltip-right" data-tip="Upload new">
+        <div onclick="my_modal_4.showModal()"
+        class="tab cursor-pointer  w-[50px] rounded-md h-[50px] bg-zinc-800  flex items-center justify-center">
+        <i id="icon" class="ri-add-line stroke-none text-[#ffffff85] text-[18px]"></i>
+        </div>
+        </div>
+
+    <div class="tooltip hover:tooltip-open tooltip-right" data-tip="Liked">
+    <a href="fav">
+        <div
+            id="fav" class="tab cursor-pointer w-[50px] rounded-md h-[50px] bg-zinc-800  flex items-center justify-center">
+            <i id="icon" class="ri-heart-line text-[#ffffff85] text-[18px]"></i>
+        </div>
+    </a>
+    </div>
+    <div class="tooltip hover:tooltip-open tooltip-right" data-tip="playlist">
+        <a href="/playlist">
+            <div
+                id="playlist" class="tab cursor-pointer w-[50px] rounded-md h-[50px] bg-zinc-800  flex items-center justify-center">
+                <i id="icon" class="ri-play-list-line text-[#ffffff85] text-[18px]"></i>
+            </div>
+        </a>
+    </div>
+    </div>
+</div>

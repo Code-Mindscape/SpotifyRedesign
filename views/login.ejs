@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="icon" type="image/svg" href="/images/spotify-logo.svg">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main w-full h-screen bg-[#040e07] flex items-center justify-center">
+        <div class="wrapper flex items-center justify-center w-[410px] h-[440px]">
+            <div class="bac bg-[#00FF90] flex items-center justify-center rounded-2xl w-full h-[280px]">
+                <div class="main py-5 px-5 bg-[#ffffff] rounded-2xl w-[96%] min-h-[100px]">
+                    <div class="logo w-full flex items-center justify-end">
+                        <i class="ri-spotify-fill text-5xl text-[#1ED760]"></i>
+                        <h1 class=" text-2xl font-bold tracking-tighter text-[#6B6B6B]">Login</h1>
+                    </div>
+                    <div class="inputs w-full my-5 flex items-center justify-start flex-col">
+                        <form action="/auth/login" method="post" class="w-full flex items-start gap-3 justify-center flex-col">
+                            <input
+                                name="email"
+                                class="pl-3 text-[16px] rounded-md w-full py-3 focus:border-[#70707086] outline-none border border-[#70707046]"
+                                type="email" placeholder="Enter email">
+                            <input
+                                name="password"
+                                class="pl-3 text-[16px] rounded-md w-full py-3 focus:border-[#70707086] outline-none border border-[#70707046]"
+                                type="password" placeholder="Enter password">
+                            <input
+                                class="rounded-md text-[16px] w-full py-3 transition-all active:scale-[0.991] hover:bg-[#1ABE54] bg-[#1ED760] text-white"
+                                type="submit" value="Login">
+                        </form>
+                        <div class="signup w-full py-3 flex items-center justify-center text">
+                            <p>Already have an account? <a class="hover:text-blue-800" href="/auth/signup">Signup</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
