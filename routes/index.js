@@ -6,7 +6,7 @@ const upload = require("./multer");
 const jwt = require("jsonwebtoken");
 const usersModel = require("../db/usersModel");
 const songsModel = require("../db/songsModel");
-require('dotenv').config(
+require('dotenv').config()
 
 
 router.use(flash());
